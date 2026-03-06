@@ -3,9 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Why Mass Timber? | Sehn Consulting",
+  title: "Why Mass Timber?",
   description:
     "Mass timber is transforming the construction industry. Learn why CLT, glulam, and engineered wood products are the future of sustainable, high-performance building.",
+  openGraph: {
+    title: "Why Mass Timber? | Sehn Consulting",
+    description:
+      "Discover why mass timber is the fastest-growing segment in commercial construction. Carbon advantages, structural performance, and market opportunity.",
+    type: "article",
+  },
 };
 
 const sections = [

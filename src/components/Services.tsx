@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedSection from "./AnimatedSection";
+
 const services = [
   {
     icon: (
@@ -106,7 +110,7 @@ export default function Services() {
   return (
     <section id="services" className="py-24 lg:py-32 bg-section">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <AnimatedSection className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-4">
             What We Do
           </p>
@@ -117,40 +121,43 @@ export default function Services() {
             From finding the right projects to closing them, we provide
             end-to-end strategic support tailored to the mass timber industry.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, i) => (
-            <div
+            <AnimatedSection
               key={i}
-              className="bg-white rounded-lg p-8 border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+              delay={0.15 * i}
+              direction={i % 2 === 0 ? "left" : "right"}
             >
-              <div className="w-14 h-14 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
-                {service.icon}
+              <div className="bg-white rounded-lg p-8 border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 h-full">
+                <div className="w-14 h-14 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {service.desc}
+                </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, j) => (
+                    <li key={j} className="flex items-start gap-3 text-sm">
+                      <svg
+                        className="w-5 h-5 text-primary shrink-0 mt-0.5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                {service.desc}
-              </p>
-              <ul className="space-y-2">
-                {service.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm">
-                    <svg
-                      className="w-5 h-5 text-primary shrink-0 mt-0.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

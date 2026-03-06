@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedSection from "./AnimatedSection";
+
 const steps = [
   {
     num: "01",
@@ -25,7 +29,7 @@ export default function Approach() {
   return (
     <section id="approach" className="py-24 lg:py-32 bg-white">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <AnimatedSection className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-4">
             Our Approach
           </p>
@@ -36,34 +40,36 @@ export default function Approach() {
             A proven methodology that turns early project intelligence into
             competitive advantage and closed business.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, i) => (
-            <div key={i} className="relative">
-              <div className="text-5xl font-bold text-primary/10 mb-4">
-                {step.num}
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
-                {step.title}
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {step.desc}
-              </p>
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 right-0 translate-x-1/2 w-8">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-primary/20"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+            <AnimatedSection key={i} delay={0.2 * i}>
+              <div className="relative">
+                <div className="text-5xl font-bold text-primary/10 mb-4">
+                  {step.num}
                 </div>
-              )}
-            </div>
+                <h3 className="text-lg font-bold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {step.desc}
+                </p>
+                {i < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 right-0 translate-x-1/2 w-8">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      className="text-primary/20"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>
