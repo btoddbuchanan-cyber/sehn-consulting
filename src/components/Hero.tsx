@@ -24,7 +24,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a2e0a]/85 via-[#2d5016]/75 to-[#1e3a0e]/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/80" />
 
       {/* Bottom fade to white */}
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent" />
@@ -37,7 +37,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8"
           >
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span className="text-white/90 text-sm font-medium">
               Mass Timber Market Intelligence
             </span>
@@ -50,7 +50,7 @@ export default function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
           >
             We identify mass timber projects{" "}
-            <span className="text-green-300">before your competitors do.</span>
+            <span className="text-white/70">before your competitors do.</span>
           </motion.h1>
 
           <motion.p

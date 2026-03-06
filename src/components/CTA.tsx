@@ -6,7 +6,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="py-24 lg:py-32 bg-gradient-to-br from-[#1a2e0a] via-[#2d5016] to-[#1e3a0e] relative overflow-hidden"
+      className="py-24 lg:py-32 bg-gradient-to-br from-black via-[#111] to-[#1a1a1a] relative overflow-hidden"
     >
       <div className="absolute inset-0 opacity-5">
         <div
